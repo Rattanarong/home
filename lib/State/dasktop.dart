@@ -30,20 +30,20 @@ class _DasktopState extends State<Dasktop> {
         height: MediaQuery.of(context).size.height,
         decoration: BoxDecoration(
             gradient: LinearGradient(colors: [
-          hexStringToColor("0099CC"),
-          hexStringToColor("00B2EE"),
-          hexStringToColor("00BFFF")
+          hexStringToColor("FFFFFF"),
+          hexStringToColor("FFFFFF"),
+          hexStringToColor("FFFFFF")
         ], begin: Alignment.topCenter, end: Alignment.bottomCenter)),
         child: SingleChildScrollView(
           child: Padding(
             padding: EdgeInsets.fromLTRB(
-                20, MediaQuery.of(context).size.height * 0.1, 20, 0),
+                70, MediaQuery.of(context).size.height * 0.1, 70, 0),
             child: Column(
               children: <Widget>[
                 logoWidget("assets/images/Smart home.png"),
                 buildAppName(),
-                reusableTextField("User:", Icons.account_circle_outlined, false,
-                    emailController),
+                reusableTextField("Email:", Icons.account_circle_outlined,
+                    false, emailController),
                 const SizedBox(
                   height: 20,
                 ),
@@ -84,7 +84,7 @@ class _DasktopState extends State<Dasktop> {
     return Row(
       mainAxisAlignment: MainAxisAlignment.center,
       children: [
-        const Text("Non Account?", style: TextStyle(color: Colors.white70)),
+        const Text("Non Account?", style: TextStyle(color: Colors.brown)),
         GestureDetector(
           onTap: () {
             Navigator.push(context,
@@ -92,7 +92,7 @@ class _DasktopState extends State<Dasktop> {
           },
           child: const Text(
             " create Account",
-            style: TextStyle(color: Colors.white, fontWeight: FontWeight.bold),
+            style: TextStyle(color: Colors.blue, fontWeight: FontWeight.bold),
           ),
         )
       ],
@@ -271,6 +271,9 @@ class _DasktopState extends State<Dasktop> {
     return Row(
       mainAxisAlignment: MainAxisAlignment.center,
       children: [
+        Container(
+          margin: EdgeInsets.only(bottom: 50),
+        ),
         ShowTitle(title: Myconstat.appName, textStyle: Myconstat().h1Style()),
       ],
     );

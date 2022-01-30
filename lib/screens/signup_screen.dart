@@ -29,10 +29,10 @@ class _SignUpScreenState extends State<SignUpScreen> {
       extendBodyBehindAppBar: true,
       appBar: AppBar(
         centerTitle: true,
-        backgroundColor: Colors.transparent,
+        backgroundColor: Colors.yellow[700],
         elevation: 0,
         title: const Text(
-          "Sign Up",
+          "Register",
           style: TextStyle(fontSize: 24, fontWeight: FontWeight.bold),
         ),
       ),
@@ -41,13 +41,13 @@ class _SignUpScreenState extends State<SignUpScreen> {
         height: MediaQuery.of(context).size.height,
         decoration: BoxDecoration(
             gradient: LinearGradient(colors: [
-          hexStringToColor("0099CC"),
-          hexStringToColor("00B2EE"),
-          hexStringToColor("00BFFF")
+          hexStringToColor("FFFFFF"),
+          hexStringToColor("FFFFFF"),
+          hexStringToColor("FFFFFF")
         ], begin: Alignment.topCenter, end: Alignment.bottomCenter)),
         child: SingleChildScrollView(
           child: Padding(
-            padding: EdgeInsets.fromLTRB(20, 120, 20, 0),
+            padding: EdgeInsets.fromLTRB(70, 120, 70, 0),
             child: Column(
               children: <Widget>[
                 const SizedBox(
@@ -73,7 +73,7 @@ class _SignUpScreenState extends State<SignUpScreen> {
                 const SizedBox(
                   height: 20,
                 ),
-                firbaseButton(context, "Sign Up", () {
+                firbaseButton(context, "Register", () {
                   FirebaseAuth.instance
                       .createUserWithEmailAndPassword(
                           email: emailController.text,

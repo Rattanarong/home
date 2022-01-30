@@ -17,21 +17,22 @@ TextField reusableTextField(String text, IconData icon, bool isPasswordType,
     obscureText: isPasswordType,
     enableSuggestions: !isPasswordType,
     autocorrect: isPasswordType,
-    cursorColor: Colors.white,
-    style: TextStyle(color: Colors.white.withOpacity(0.9)),
+    cursorColor: Colors.yellow[800],
+    style: TextStyle(color: Colors.black),
     decoration: InputDecoration(
         prefixIcon: Icon(
           icon,
-          color: Colors.white70,
+          color: Colors.brown,
         ),
         labelText: text,
-        labelStyle: TextStyle(color: Colors.yellow.withOpacity(0.9)),
+        labelStyle: TextStyle(color: Colors.yellow[800]),
         filled: true,
         floatingLabelBehavior: FloatingLabelBehavior.never,
-        fillColor: Colors.white.withOpacity(0.3),
+        fillColor: Colors.white,
         border: OutlineInputBorder(
-            borderRadius: BorderRadius.circular(30),
-            borderSide: const BorderSide(width: 0, style: BorderStyle.none))),
+            borderRadius: BorderRadius.circular(22),
+            borderSide: const BorderSide(
+                width: 0, style: BorderStyle.none, color: Colors.blue))),
     keyboardType: isPasswordType
         ? TextInputType.visiblePassword
         : TextInputType.emailAddress,
@@ -43,7 +44,7 @@ Container firbaseButton(BuildContext context, String title, Function onTap) {
   return Container(
     width: MediaQuery.of(context).size.width,
     height: 50,
-    margin: const EdgeInsets.fromLTRB(10, 10, 10, 20),
+    margin: const EdgeInsets.fromLTRB(20, 20, 20, 20),
     decoration: BoxDecoration(borderRadius: BorderRadius.circular(90)),
     child: ElevatedButton(
       onPressed: () {
@@ -52,14 +53,14 @@ Container firbaseButton(BuildContext context, String title, Function onTap) {
       child: Text(
         title,
         style: const TextStyle(
-            color: Colors.black87, fontWeight: FontWeight.bold, fontSize: 16),
+            color: Colors.white, fontWeight: FontWeight.bold, fontSize: 19),
       ),
       style: ButtonStyle(
           backgroundColor: MaterialStateProperty.resolveWith((states) {
             if (states.contains(MaterialState.pressed)) {
-              return Colors.black26;
+              return Colors.brown;
             }
-            return Colors.yellow;
+            return Colors.yellow[700];
           }),
           shape: MaterialStateProperty.all<RoundedRectangleBorder>(
               RoundedRectangleBorder(borderRadius: BorderRadius.circular(30)))),
